@@ -1,0 +1,28 @@
+#!/bin/bash
+if ! jupyter nbconvert --to script for_script.ipynb --output script_ofg 2>/dev/null
+then
+	echo "for_script.ipynb notebook has not been found"
+else
+	count=0
+	for file in *.biom
+	do
+	if [ -d "$file" ]
+	then
+		cd $file
+		name=${file%".biom"}
+		if [ -f $name.from_biom.txt ]
+		then
+			if python3 ../script_ofg.py 2>/dev/null
+			then 
+				count=$(( $count + 1 ))
+			else
+				echo "Script execution in" $file "directory failed"
+			fi
+		else
+			echo "Folder" $file "doesn't contain converted biom file"
+		fi
+		cd ..
+	fi
+	done
+	echo "Splitted" $count "tables"
+fi

@@ -1,0 +1,15 @@
+#!/bin/bash
+count=0
+for file in *.biom
+do
+if [ -d "$file" ]
+then
+cd $file
+	if rm *.csv 2>/dev/null
+	then
+		count=$(( $count + 1 ))
+	fi
+cd ..
+fi
+done
+echo "Cleared " $count " folders"

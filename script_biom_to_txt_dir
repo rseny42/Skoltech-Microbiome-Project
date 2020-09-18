@@ -1,0 +1,18 @@
+#!/bin/bash
+count=0
+for file in *.biom
+do
+if [ -d "$file" ]
+then
+cd $file
+	biomfile=$file
+	biomfile=${biomfile%".biom"}
+	#echo $biomfile
+	if biom convert -i $biomfile.biom -o $biomfile.from_biom.txt --to-tsv --header-key taxonomy
+	then
+		count=$(( $count + 1 ))
+	fi
+cd ..
+fi
+done
+echo "Converted" $count "biomfiles"
