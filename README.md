@@ -2,8 +2,8 @@
 Microbiome cluster analyses and low-dimensional representation
 
 Python notebooks are the following:
-1.Final_merge.ipynb is for merging all the pivot tables from the AGP, ibd, ptb and t2d folders into pivot_*.csv tables, one for each O, F and G taxonomic level
-2.PCA.ipynb is for Principal Components projection, producing proj_*.csv tables
+1.Final_merge.ipynb is for merging all the pivot tables from the AGP, ibd, ptb and t2d folders into pivot_ .csv tables, one for each O, F and G taxonomic level
+2.PCA.ipynb is for Principal Components projection, producing proj_ csv tables
 3.Intristic_dim_estimation.ipynb is for MLE algorithm of the intristic dimension estimation, providing diagrams for the apriori dimension and neighborhood estimation
 4.Manifold_learning.ipynb is for manifold learning Isomap, LLE, modified LLE embeddings of the PCA projected data. Parameters are taken near values from previous diagrams
 5.Regresion_inverse_knn.ipynb is for the inverse mapping from the Isomap projected data to the PC space. Wide range of dimensions for the Isomap images are calculated
@@ -16,7 +16,7 @@ Python notebooks are the following:
 
 It is advised to compute them in the same order as mentioned above.
 
-All the generated *.csv files are stored in the current repository in the case to perform the future computational experiments without recalculating the whole pipeine.
+All the generated .csv files are stored in the current repository in the case to perform the future computational experiments without recalculating the whole pipeine.
 
 scripts folder is containing bash scripts to perform the 
 
